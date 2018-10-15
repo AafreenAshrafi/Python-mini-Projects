@@ -1,0 +1,84 @@
+#functions create then call the function
+# Prog function defination
+import math
+results = []
+n=0
+
+
+#1
+def BTD():
+   print('Welcome to binary to decimal converter')
+   binaryno =int(input("type a binary no to convert to Decimal"))
+   print('Your no is ',binaryno)
+   
+   while (binaryno != 1):
+         #for n in range (0,5):
+          global n
+          rem = math.floor(binaryno % 10)
+          #print ('the remainder is',rem)
+          quotient = (rem * (2**n))
+          
+          #print('the quotient is ',quotient)
+          n =n+1
+          binaryno = math.floor(binaryno / 10)
+          #print('the new binaryno no is',binaryno)
+          results.append(quotient)
+   if (binaryno ==1):
+         #print('binaryno is == 1')
+         quotient = (1 * (2**n))
+         results.append(quotient)
+         #print('the quotient is ',quotient)
+         D =sum(results)
+         print('your result in Decimalno form is ',D)
+
+
+#are you able to hear me?nopokay we will reconnect whatsapp call?okay
+   
+
+#2
+def DTB():
+   result=''
+   print('Welcome to decimal to binary converter')
+   decimalno =int(input("type a Decimal no to convert to binary"))
+   print('Your no is ',decimalno)
+   while (decimalno != 1) :
+       #results = []
+       rem = math.floor(decimalno % 2)
+       #results.append(rem)
+       #print (rem)
+       #print ('the remainder is',rem)
+       decimalno= math.floor(decimalno / 2)
+       #print('the new decimal no is',decimalno)
+       result= result +str(rem)
+   if (decimalno ==1):
+     result= result +str(1)
+     #results.reverse() to join the string and reverse use below 
+     print('your result in binary form is ',"".join(reversed(result)))
+    #reverse the list
+
+
+
+
+    
+  
+#Prog start
+while True:
+ print("welcome to Converter ")
+ converter = input('''
+ choose: 1 to convert Binary to Decimal
+        2 to convert Decimal to Binary
+        3 to exit
+ ''')
+
+#print('you selected option:', converter)
+
+ if (converter == '1'):
+    BTD()
+ elif (converter == '2'):
+    DTB()
+ elif  (converter == '3'):
+   break;
+ else :
+  print('Your option is not valid')
+
+

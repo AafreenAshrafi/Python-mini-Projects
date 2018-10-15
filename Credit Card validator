@@ -1,0 +1,59 @@
+#credit card validator
+#import string
+#from string import str
+#import sys
+import math
+
+ccn =input('enter the credit card no with 11 digits ')
+#print('your cc no is', ccn)
+
+if (ccn.isdigit()):
+    ndigits = len(ccn)
+    #print('the no of digits is ', ndigits)
+    if (ndigits ==11):
+        strn =""
+        strn1 =""
+        odddigitno =0
+        overallsum =0
+        totaldigit =0
+        print('the no of dgits is 11 so correct')
+        for i in range (9,-1,-2):
+            twiceno = ((int(str(ccn [i])))*2)
+            #print('the twice no originally is ',twiceno)
+            if (twiceno >9):
+                while (twiceno >1):
+                    rem = (twiceno %10)
+                    totaldigit =totaldigit +int(rem)
+                    #print('the twice is greater than 9 so toal is ',totaldigit)
+                    twiceno = twiceno/10
+                    #print('the dividend is ',twiceno)
+            else:
+                overallsum = overallsum +int(twiceno)
+                #print('sum till now for non greater than 9 is ',overallsum)
+            totalevendigitsum = overallsum +totaldigit
+        #print('total sum is for evenno ',totalevendigitsum)                
+            #strn = strn +str(ccn [i])
+            #print(strn)
+        for i in range (10,-1,-2):
+            odddigitno += (int(str(ccn [i])))
+            #print(odddigitno)
+            #strn1 = strn1 +str(ccn [i])
+            #print(strn1)
+        #print('total sum is for oddno ',odddigitno)
+        total = totalevendigitsum + odddigitno
+        print('total sum of odd and even digit is',total)
+        if (total %10 ==0):
+            print('CC no is valid')
+        else:
+            print('invalid  credit card no')          
+            
+        
+    else:
+        print('the no of digits is wrong it should be 11 digits ')
+
+    
+else:
+    print('your CC No is invalid')
+
+
+

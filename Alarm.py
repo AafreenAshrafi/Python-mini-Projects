@@ -5,7 +5,7 @@ pygame.mixer.init()
 pygame.init()
 from time import sleep
 option = 0
-
+##test
 def wu():
  musically = pygame.mixer.Sound("C:/Users/aafreen.ashrafi/Desktop/python/analog-watch-alarm_daniel-simion.wav")
  musically.play()
